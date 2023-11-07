@@ -7,6 +7,7 @@ In this program we need to provide the solution to simulate the scenario by calc
 3. It then checks how many monsters can be eliminated before any one of them reaches the city by comparing the time each monster takes to reach with its index (i.e., the minute number).
 
 **Complexity:**
+
 **Time Complexity:**
 • Calculating the time taken by each monster: O(n), where n is the number of monsters.
 • Sorting the array of times: O(n log n), due to sorting.
