@@ -11,12 +11,12 @@ Since our array is sorted we can use these two cases to compute our objective so
 
 **APPROACH**
 1. **Initialization**: Obtain the size of the input array nums and create a result array of the same size.
-2. 
+ 
 **int n = nums.size();
 vector<int> result(n);**
 
-3. **Prefix and Suffix Sums**: Create two additional arrays, prefixSum and suffixSum, to store the cumulative sums from the beginning and end of the nums array, respectively. Initialize the first element of both arrays -Don't forget that the input array is sorted- .
-4. 
+2. **Prefix and Suffix Sums**: Create two additional arrays, prefixSum and suffixSum, to store the cumulative sums from the beginning and end of the nums array, respectively. Initialize the first element of both arrays -Don't forget that the input array is sorted- .
+ 
 **vector<int> prefixSum(n), suffixSum(n);**
 
 **prefixSum[0] = nums[0];**
@@ -24,8 +24,8 @@ vector<int> result(n);**
 **suffixSum[n - 1] = nums[n - 1];**
 
 
-6. **Calculate Sums in One Loop**: Use a single loop to calculate both the prefix and suffix sums simultaneously.
-7. 
+3. **Calculate Sums in One Loop**: Use a single loop to calculate both the prefix and suffix sums simultaneously.
+ 
 **for (int i = 1; i < n; ++i) {**
 
     **prefixSum[i] = prefixSum[i - 1] + nums[i];**
@@ -34,8 +34,8 @@ vector<int> result(n);**
 }**
 
 
-9. **Calculate Absolute Differences**: Iterate through the array and compute the absolute differences using the prefix and suffix sums.
-10. 
+4. **Calculate Absolute Differences**: Iterate through the array and compute the absolute differences using the prefix and suffix sums.
+   
 **for (int i = 0; i < n; ++i) {**
 
     **int currentAbsoluteDiff = ((nums[i] * i) - prefixSum[i]) + (suffixSum[i] - (nums[i] * (n - i - 1)));**
@@ -44,9 +44,9 @@ vector<int> result(n);**
 }**
 
 
-12. **Return the calculated result array.**
+5. **Return the calculated result array.**
 
-13. 
+ 
 **Complexity**
 
 **Time complexity**: O(N)
