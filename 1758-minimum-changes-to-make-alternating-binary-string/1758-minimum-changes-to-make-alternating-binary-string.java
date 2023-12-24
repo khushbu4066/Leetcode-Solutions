@@ -28,9 +28,8 @@ public class Solution {
 //         return Math.min(start_with_0, start_with_1);
         
         
-        
         int n = s.length();
-        int start_with_0 = 0; //010101
+        int start_with_0 = 0; //010101 Even
         
         for(int i = 0; i<n; i++){
             if(i%2==0){
