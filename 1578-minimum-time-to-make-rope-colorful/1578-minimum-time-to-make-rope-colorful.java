@@ -21,3 +21,7 @@ class Solution {
         return time; 
     }
 }
+
+//Using Greedy approach
+//Time Complexity = O(n)
+  //  Space comp = O(1)
