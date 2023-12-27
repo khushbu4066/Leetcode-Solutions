@@ -8,14 +8,15 @@ class Solution {
         int rows = matrix.length;
         int cols = matrix[0].length;
         
-        int retObject[] = new int[rows * cols];
+        
+        int result[] = new int[rows * cols];
         int index =0;
         int row =0;
         int col=0;
         
         // iterate through diagnol
-        for(int pos=0; pos<retObject.length ; pos++ ){
-            retObject[pos]=matrix[row][col]; 
+        for(int i=0; i<result.length ; i++ ){
+            result[i]=matrix[row][col]; 
             // If diagnoal level is Even
             if( (row+col) % 2 ==0){
                 // If col reaches last col then  move down row increased;
@@ -37,7 +38,7 @@ class Solution {
                 }
             }
         }
-        return retObject;
+        return result;
     }
 }
 
