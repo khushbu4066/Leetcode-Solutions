@@ -13,10 +13,14 @@ class Solution {
 //         }
 //         return result;
         
+        // TC = O(n^2)
+        // SC = O(1)
+        
         int n = s.length();
+        int result = -1;
         HashMap<Character, Integer> mp = new HashMap<>();
 
-        int result = -1;
+        
 
         for (int i = 0; i < n; i++) {
             char ch = s.charAt(i);
@@ -31,6 +35,7 @@ class Solution {
         return result;
     }
 }
+// TC = O(n)
+// SC = O(n)
 
-// TC = O(n^2)
-// SC = O(1)
+
