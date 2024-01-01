@@ -19,17 +19,16 @@ class Solution {
 //     return result;
 //     }
         
-        HashMap<Integer,Integer> set = new HashMap<>();
+        HashMap<Integer, Integer> mp = new HashMap<>();
         
         int n = arr.length;
-        
         for(int i = 0; i<n; i++){
             int complement = target - arr[i];
             
-            if(set.containsKey(complement)){
-                return new int[]{set.get(complement)+1,i+1};
+            if(mp.containsKey(complement)){
+                return new int[] {mp.get(complement)+1, i+1};
             }
-            set.put(arr[i], i);
+            mp.put(arr[i], i);
         }
         return new int[]{};
     }
