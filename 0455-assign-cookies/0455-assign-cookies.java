@@ -6,7 +6,6 @@ class Solution {
         
         int m = g.length;
         int n = s.length;
-        
         int i = 0, j = 0;
         
         while(i<m && j<n){
