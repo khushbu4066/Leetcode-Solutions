@@ -15,8 +15,13 @@ class Solution {
             }
             
             result += (prevDeviceCount * currentDeviceCount);
-            
-            prevDeviceCount = (currentDeviceCount == 0) ? prevDeviceCount : currentDeviceCount;
+            // prevDeviceCount = (currentDeviceCount == 0) ? prevDeviceCount : currentDeviceCount;
+            if(currentDeviceCount != 0){
+                prevDeviceCount = currentDeviceCount;
+            }
+            else{
+                prevDeviceCount = prevDeviceCount;
+            }
             
         }
         return result;
