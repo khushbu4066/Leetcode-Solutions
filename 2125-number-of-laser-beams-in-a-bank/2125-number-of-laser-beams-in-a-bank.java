@@ -19,9 +19,9 @@ class Solution {
             if(currentDeviceCount != 0){
                 prevDeviceCount = currentDeviceCount;
             }
-            else{
-                prevDeviceCount = prevDeviceCount;
-            }
+            // else{
+            //     prevDeviceCount = prevDeviceCount;
+            // }
             
         }
         return result;
