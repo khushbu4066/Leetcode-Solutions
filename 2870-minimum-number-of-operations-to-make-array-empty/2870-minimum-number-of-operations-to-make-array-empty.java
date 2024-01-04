@@ -1,8 +1,7 @@
 class Solution {
     public int minOperations(int[] arr) {
         
-        HashMap<Integer, Integer> kd =  new HashMap<>();
-        
+        HashMap<Integer, Integer> kd = new HashMap<>();
         int n = arr.length;
         
         for(int i = 0; i<n; i++){
@@ -10,9 +9,7 @@ class Solution {
         }
         
         int result = 0;
-        
         for(HashMap.Entry<Integer, Integer> entry : kd.entrySet()){
-            
             int freq = entry.getValue();
             
             if(freq == 1){
