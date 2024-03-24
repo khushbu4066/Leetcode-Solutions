@@ -9,20 +9,36 @@
  *     }
  * }
  */
+// public class Solution {
+//     public boolean hasCycle(ListNode head) {
+//         ListNode slow = head;
+//         ListNode fast = head;
+//         while(fast != null && fast.next != null){
+//             slow = slow.next;
+//             fast = fast.next.next;
+//             if(fast == slow){
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+// }
+
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
-        while(fast != null && fast.next != null){
-            slow = slow.next;
-            fast = fast.next.next;
-            if(fast == slow){
+        Set<ListNode>s = new HashSet<>();
+        while(head != null){
+            if(s.contains(head)){
                 return true;
             }
+        s.add(head);
+        head = head.next;
         }
         return false;
     }
 }
+
+
 
 // Intuition
 // Floyd's Tortoise and Hare algorithm.
