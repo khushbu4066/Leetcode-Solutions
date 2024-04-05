@@ -8,7 +8,7 @@ class Solution {
              return dp[n];
         }
         
-        return solve(dp, n-1) + solve(dp, n-2);
+        return dp[n] = solve(dp, n-1) + solve(dp, n-2);
     }
     
     
