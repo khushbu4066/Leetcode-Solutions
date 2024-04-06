@@ -1,32 +1,36 @@
 class Solution {
     public String minRemoveToMakeValid(String s) {
+
         int n = s.length();
         
-        HashSet<Integer> toRemove = new HashSet<>();
-        Stack<Integer> st = new Stack<>();
+        Stack<Integer>st = new Stack<>();
+        HashSet<Integer> remove_bracket = new HashSet<>();
         
-        for(int i = 0; i < n; i++) {
-            char ch = s.charAt(i);
-            if(ch == '(') 
+        for(int i = 0; i<n; i++){
+            if(s.charAt(i) == '('){
                 st.push(i);
-            else if(ch == ')') {
-                if(st.isEmpty()) 
-                    toRemove.add(i);
-                else 
+            }
+            else if(s.charAt(i) == ')'){
+                if(st.empty()){
+                    remove_bracket.add(i);
+                }
+                else{
                     st.pop();
+                }
             }
         }
         
-        while(!st.isEmpty()) 
-            toRemove.add(st.pop());
-        
-        StringBuilder result = new StringBuilder();
-        
-        for(int i = 0; i < n; i++) {
-            if(!toRemove.contains(i))
-                result.append(s.charAt(i));
+        // if st have only "( ( (" 
+        while(!st.empty()){
+            remove_bracket.add(st.pop());
         }
         
+        StringBuilder result = new StringBuilder();
+        for(int i = 0; i<n; i++){
+            if(!remove_bracket.contains(i)){
+                result.append(s.charAt(i));
+            }
+        }
         return result.toString();
     }
 }
