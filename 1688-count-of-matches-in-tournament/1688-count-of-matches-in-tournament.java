@@ -18,16 +18,24 @@
 
 //time complexity = O(logn)
 
+// class Solution{
+//     public int numberOfMatches(int n){
+        
+//         int m = 0;
+        
+//         while(n>1){
+            
+//             m+=n/2;
+//             n=(n+1)/2;
+//         }
+//         return m;
+//     }
+// }
+
 class Solution{
     public int numberOfMatches(int n){
         
-        int m = 0;
-        
-        while(n>1){
-            
-            m+=n/2;
-            n=(n+1)/2;
-        }
-        return m;
+       return n-1;
     }
 }
+
