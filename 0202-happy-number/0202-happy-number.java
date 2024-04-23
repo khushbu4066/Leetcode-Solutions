@@ -12,3 +12,10 @@ class Solution {
         return n == 1;
     }
 }
+
+     
+        
+        
+        
+        
+//O(k*logn)  - average tc but not optimal solution
